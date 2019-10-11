@@ -70,8 +70,7 @@ public class LongestSubStringSolution {
         int n = s.length();
         Set<Character> set = new HashSet<>();
 
-        int runTimes = 0;
-
+        // ans=最长的长度 i=窗口左边下标  j=窗口右边下标
         int ans = 0, i = 0, j = 0;
         while (i < n && j < n) {
 
@@ -81,9 +80,7 @@ public class LongestSubStringSolution {
             } else {
                 set.remove(s.charAt(i++));
             }
-            runTimes++;
         }
-        System.out.println("runTimes =" + runTimes);
         return ans;
     }
 
