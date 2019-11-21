@@ -46,6 +46,13 @@ public class RemoveNthFromEnd {
     }
 
 
+    /**
+     * 双指针 一次遍历
+     *
+     * @param head
+     * @param n
+     * @return
+     */
     public ListNode method2(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
