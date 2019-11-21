@@ -4,12 +4,15 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
+ * https://leetcode-cn.com/problems/add-two-numbers/
+ *
  * @author XiaoXiong
  * @since 2019-10-10
  */
 public class AddTwoNumbers {
 
-    public static ListNode addTwoNumbers(ListNode ln1, ListNode ln2) {
+
+    public ListNode addTwoNumbers(ListNode ln1, ListNode ln2) {
 
         //哑结点
         //哑结点其实就是放在第一个存放数据结点之前、头结点之后的结点。
@@ -75,13 +78,4 @@ public class AddTwoNumbers {
     }
 
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-
-    }
 }
