@@ -53,7 +53,7 @@ public class RemoveNthFromEnd {
         ListNode first = dummy;
         ListNode second = dummy;
 
-        //first往后走两步
+        //first往后走n步
         for (int i = 1; i <= n + 1; i++) {
             first = first.next;
         }
@@ -69,7 +69,7 @@ public class RemoveNthFromEnd {
 
 
         return dummy.next;
-//        return head;
+//        return head;  //当只删除只有一个节点时返回head有问题
     }
 
 
@@ -77,21 +77,21 @@ public class RemoveNthFromEnd {
     public void testRemoveNthFromEnd() {
 
         ListNode testListNode = new ListNode(1);
-        testListNode.next = new ListNode(2);
-        testListNode.next.next = new ListNode(3);
-        testListNode.next.next.next = new ListNode(4);
+//        testListNode.next = new ListNode(2);
+//        testListNode.next.next = new ListNode(3);
+//        testListNode.next.next.next = new ListNode(4);
 
 
 //        ListNode result = removeNthFromEnd(testListNode, 2);
-        ListNode result = method2(testListNode, 4);
-
-        Assert.assertEquals(result.val, 2);
-        Assert.assertEquals(result.next.val, 3);
-        Assert.assertEquals(result.next.next.val, 4);
+        ListNode result = method2(testListNode, 1);
+        Assert.assertNull(result);   //当删除只有一个节点时
+//
+//        Assert.assertEquals(result.val, 2);
+//        Assert.assertEquals(result.next.val, 3);
+//        Assert.assertEquals(result.next.next.val, 4);
 
 
     }
-
 
 
 }
