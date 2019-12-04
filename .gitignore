@@ -19,3 +19,4 @@ bin/
 passport-service.iml
 build
 *.vscode
+out
