@@ -2,6 +2,9 @@ package stack;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Stack;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -76,6 +79,18 @@ public class ValidParentheses {
         return stack.pop() == null;
     }
 
+
+    private HashMap<Character, Character> mapping;
+
+    public ValidParentheses() {
+        this.mapping = new HashMap<>();
+
+        this.mapping.put('}', '{');
+        this.mapping.put(')', '(');
+        this.mapping.put(']', '{');
+
+    }
+
     /**
      * TODO 官方解法：https://leetcode-cn.com/problems/valid-parentheses/solution/you-xiao-de-gua-hao-by-leetcode/
      *
@@ -85,7 +100,25 @@ public class ValidParentheses {
     public boolean isValid(String s) {
 
 
-        return false;
+        Stack<Character> stack = new Stack();
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char c = s.charAt(i);
+            if (mapping.containsKey(c)) {
+
+               char topEle =  stack.empty() ? '#' : stack.pop();
+                if (topEle != mapping.get(c)) {
+                    return false;
+                }
+
+            } else {
+                stack.push(c);
+            }
+            
+        }
+
+        return stack.empty();
     }
 
 
@@ -124,7 +157,8 @@ public class ValidParentheses {
     @Test
     public void validTestWhenStringLengthIsOddNumber() {
         String str = "{}[";
-        assertFalse(isValidUsingCustomStack(str));
+//        assertFalse(isValidUsingCustomStack(str));
+        assertFalse(isValid(str));
     }
 
 
@@ -132,13 +166,15 @@ public class ValidParentheses {
     public void validTestWhenStringWasSymmetrical() {
         String str = " ({[]}) ";
         assertTrue(isValidUsingCustomStack(str));
+//        assertTrue(isValid(str));  //官方解不支持空字符
     }
 
     @Test
     public void validTest() {
 //        String str = "  {}[]()  ";
         String str = "((()(())))";
-        assertTrue(isValidUsingCustomStack(str));
+//        assertTrue(isValidUsingCustomStack(str));
+        assertTrue(isValid(str));
     }
 
 }

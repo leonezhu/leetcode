@@ -129,7 +129,7 @@ public class LongestSubStringSolution {
      * public static boolean allUnique(String s, int start, int end) {
      * Set<Character> set = new HashSet<>();
      * char[] chars = s.toCharArray();
-     * for (int i = start; i < end; i++) {
+     * for (int i = start; i < end; i++) {`
      * if (set.contains(chars[i])) {
      * return false;
      * }
@@ -174,6 +174,7 @@ public class LongestSubStringSolution {
 
         System.out.println("testStr=" + testStr2);
         Assert.assertEquals(6, LongestSubStringSolution.method3(testStr2));
+
 
 
     }
