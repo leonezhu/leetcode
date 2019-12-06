@@ -11,7 +11,6 @@ import java.util.Arrays;
 public class Sorts {
 
 
-
     public static void bubbleSort(int[] a, int n) {
         if (n <= 1) {
             return;
@@ -237,8 +236,6 @@ public class Sorts {
     }
 
 
-
-
     int[] intArr = {1, 5, 2, 8, 6, 3, 4};
 
     @Test
@@ -255,10 +252,34 @@ public class Sorts {
 //        insertionSort(intArr, intArr.length);
 //        selectionSort(intArr, intArr.length);
 //        mergeSort(intArr, intArr.length);
-        quickSort(intArr, intArr.length);
+//        quickSort(intArr, intArr.length);
+        javaInsertionSort(intArr, 0, intArr.length);
         Arrays.stream(intArr).forEach(i -> System.out.print(i + " "));
         System.out.println();
 
+    }
+
+
+    /**
+     * Java Arrays 中当数组长度小于7时使用的插入排序
+     *
+     * @param dest
+     * @param low
+     * @param high
+     */
+    public static void javaInsertionSort(int[] dest, int low, int high) {
+
+        for (int i = low; i < high; i++) {
+            for (int j = i; j > low && ((Comparable) dest[j - 1]).compareTo(dest[j]) > 0; j--) {
+                swap(dest, j, j - 1);
+            }
+        }
+    }
+
+    private static void swap(int[] x, int a, int b) {
+        int t = x[a];
+        x[a] = x[b];
+        x[b] = t;
     }
 
 
