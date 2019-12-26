@@ -35,6 +35,7 @@ public class Searchs {
     }
 
     private static int binarySearchWithRecursiveInternally(int[] a, int low, int high, int value) {
+        //递归的终止条件与循环的条件相反
         if (low > high) {
             return -1;
         }

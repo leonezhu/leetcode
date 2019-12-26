@@ -93,6 +93,12 @@ public class Sorts {
 
     }
 
+    /**
+     * 归并排序
+     *
+     * @param a
+     * @param n
+     */
     public static void mergeSort(int[] a, int n) {
 
         mergeSortInternally(a, 0, n - 1);

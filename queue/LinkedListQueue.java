@@ -13,12 +13,12 @@ public class LinkedListQueue {
     private ListNode tail = null;
 
     public void enqueue(int value) {
-        ListNode listNode = new ListNode(value, null);
+        ListNode listNode = new ListNode(value);
         if (tail == null) {
             head = listNode;
             tail = listNode;
         } else {
-            tail.next = new ListNode(value, null);
+            tail.next = new ListNode(value);
             tail = tail.next;
         }
     }
