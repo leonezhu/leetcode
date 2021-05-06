@@ -24,6 +24,7 @@ public class TwoSumTest {
 
     @Test
     public void testTwoSumWithHash() {
+
         int[] test = {3, 5, 5, 7, 2};
         int[] test1 = {2, 5, 6, 7, 7};
         Assert.assertArrayEquals(new int[]{3, 4}, twoSum.twoSumWithHash(test, 9));
